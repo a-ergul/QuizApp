@@ -11,7 +11,6 @@
 		D52BF2042BB0486200B55FE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BF2032BB0486200B55FE2 /* ContentView.swift */; };
 		D52BF2062BB0486300B55FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52BF2052BB0486300B55FE2 /* Assets.xcassets */; };
 		D52BF2092BB0486300B55FE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52BF2082BB0486300B55FE2 /* Preview Assets.xcassets */; };
-		D52BF2102BB0486B00B55FE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D52BF20F2BB0486B00B55FE2 /* GoogleService-Info.plist */; };
 		D52BF2132BB0492D00B55FE2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D52BF2122BB0492D00B55FE2 /* FirebaseAnalytics */; };
 		D52BF2152BB0492D00B55FE2 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = D52BF2142BB0492D00B55FE2 /* FirebaseAnalyticsOnDeviceConversion */; };
 		D52BF2172BB0492D00B55FE2 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D52BF2162BB0492D00B55FE2 /* FirebaseAnalyticsSwift */; };
@@ -41,6 +40,7 @@
 		D52BF2472BB0492D00B55FE2 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D52BF2462BB0492D00B55FE2 /* FirebaseStorageCombine-Community */; };
 		D52BF24D2BB04B5000B55FE2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BF24C2BB04B5000B55FE2 /* Home.swift */; };
 		D52BF2502BB04B7700B55FE2 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BF24F2BB04B7700B55FE2 /* Info.swift */; };
+		D52BF2522BB05F6000B55FE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D52BF2512BB05F6000B55FE2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +49,9 @@
 		D52BF2032BB0486200B55FE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D52BF2052BB0486300B55FE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D52BF2082BB0486300B55FE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D52BF20F2BB0486B00B55FE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D52BF24C2BB04B5000B55FE2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D52BF24F2BB04B7700B55FE2 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		D52BF2512BB05F6000B55FE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +111,10 @@
 		D52BF2002BB0486200B55FE2 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				D52BF2512BB05F6000B55FE2 /* GoogleService-Info.plist */,
 				D52BF2492BB04B2C00B55FE2 /* View */,
 				D52BF2482BB04B2600B55FE2 /* Model */,
 				D52BF2012BB0486200B55FE2 /* QuizAppApp.swift */,
-				D52BF20F2BB0486B00B55FE2 /* GoogleService-Info.plist */,
 				D52BF2032BB0486200B55FE2 /* ContentView.swift */,
 				D52BF2052BB0486300B55FE2 /* Assets.xcassets */,
 				D52BF2072BB0486300B55FE2 /* Preview Content */,
@@ -237,7 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D52BF2092BB0486300B55FE2 /* Preview Assets.xcassets in Resources */,
-				D52BF2102BB0486B00B55FE2 /* GoogleService-Info.plist in Resources */,
+				D52BF2522BB05F6000B55FE2 /* GoogleService-Info.plist in Resources */,
 				D52BF2062BB0486300B55FE2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
