@@ -41,6 +41,7 @@
 		D52BF24D2BB04B5000B55FE2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BF24C2BB04B5000B55FE2 /* Home.swift */; };
 		D52BF2502BB04B7700B55FE2 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BF24F2BB04B7700B55FE2 /* Info.swift */; };
 		D52BF2522BB05F6000B55FE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D52BF2512BB05F6000B55FE2 /* GoogleService-Info.plist */; };
+		D5A30C4B2BB0801E00A9AB55 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A30C4A2BB0801E00A9AB55 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D52BF24C2BB04B5000B55FE2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D52BF24F2BB04B7700B55FE2 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		D52BF2512BB05F6000B55FE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D5A30C4A2BB0801E00A9AB55 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D52BF24F2BB04B7700B55FE2 /* Info.swift */,
+				D5A30C4A2BB0801E00A9AB55 /* Question.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A30C4B2BB0801E00A9AB55 /* Question.swift in Sources */,
 				D52BF2042BB0486200B55FE2 /* ContentView.swift in Sources */,
 				D52BF2502BB04B7700B55FE2 /* Info.swift in Sources */,
 				D52BF24D2BB04B5000B55FE2 /* Home.swift in Sources */,
