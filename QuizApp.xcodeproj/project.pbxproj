@@ -38,9 +38,9 @@
 		D52BF2432BB0492D00B55FE2 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D52BF2422BB0492D00B55FE2 /* FirebaseRemoteConfigSwift */; };
 		D52BF2452BB0492D00B55FE2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D52BF2442BB0492D00B55FE2 /* FirebaseStorage */; };
 		D52BF2472BB0492D00B55FE2 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D52BF2462BB0492D00B55FE2 /* FirebaseStorageCombine-Community */; };
-		D52BF24D2BB04B5000B55FE2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BF24C2BB04B5000B55FE2 /* Home.swift */; };
 		D52BF2502BB04B7700B55FE2 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BF24F2BB04B7700B55FE2 /* Info.swift */; };
 		D52BF2522BB05F6000B55FE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D52BF2512BB05F6000B55FE2 /* GoogleService-Info.plist */; };
+		D5597FBE2BB0D87200B1E34A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5597FBD2BB0D87200B1E34A /* Home.swift */; };
 		D5A30C4B2BB0801E00A9AB55 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A30C4A2BB0801E00A9AB55 /* Question.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,9 +50,9 @@
 		D52BF2032BB0486200B55FE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D52BF2052BB0486300B55FE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D52BF2082BB0486300B55FE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D52BF24C2BB04B5000B55FE2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D52BF24F2BB04B7700B55FE2 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		D52BF2512BB05F6000B55FE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D5597FBD2BB0D87200B1E34A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D5A30C4A2BB0801E00A9AB55 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,7 +144,7 @@
 		D52BF2492BB04B2C00B55FE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D52BF24C2BB04B5000B55FE2 /* Home.swift */,
+				D5597FBD2BB0D87200B1E34A /* Home.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,8 +254,8 @@
 			files = (
 				D5A30C4B2BB0801E00A9AB55 /* Question.swift in Sources */,
 				D52BF2042BB0486200B55FE2 /* ContentView.swift in Sources */,
+				D5597FBE2BB0D87200B1E34A /* Home.swift in Sources */,
 				D52BF2502BB04B7700B55FE2 /* Info.swift in Sources */,
-				D52BF24D2BB04B5000B55FE2 /* Home.swift in Sources */,
 				D52BF2022BB0486200B55FE2 /* QuizAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
