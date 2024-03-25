@@ -39,6 +39,28 @@ struct Home: View {
                 if !info.rules.isEmpty{
                     RulesView(info.rules)
                 }
+                
+                Button {
+                     
+                } label: {
+                    Text("Let's Go")
+                        .font(.title2)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .hAlign(.center)
+                        .padding(.top, 15)
+                        .padding(.bottom, 10)
+                        .foregroundColor(.white)
+                        .background{
+                            Rectangle()
+                                .fill(Color(.orange))
+                                .ignoresSafeArea()
+                        }
+                    
+                }
+                
+                // Remove padding
+                .padding([.bottom,.horizontal], -20)
+                .vAlign(.bottom)
             }
             .padding(20)
         } else {
