@@ -52,11 +52,35 @@ struct Home: View {
             }
         }
     }
+        
     
     /// Custom Label
     @ViewBuilder
     func CustomLabel(_ image: String,_ title: String,_ subTitle: String )->some View{
-        
+        HStack(spacing: 12){
+            Image(systemName: image)
+                .font(.title3)
+                .frame(width:45, height: 45)
+                .background{
+                    Circle()
+                        .fill(.gray.opacity(0.1))
+                        .padding(-2)
+                        .background{
+                            Circle()
+                                .stroke(Color(.green), lineWidth: 2)
+                        }
+                }
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color(.orange))
+                Text(subTitle)
+                    .font(.caption)
+                    .fontWeight(.medium)
+                    .foregroundColor(.gray)
+            }
+        }
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .leading)
     }
     
     ///  Fetch Info and Quiz Questions
@@ -86,6 +110,7 @@ struct Home: View {
 
 #Preview {
     Home()
+        .frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
 }
 
 extension View{
