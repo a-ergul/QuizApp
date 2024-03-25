@@ -15,6 +15,8 @@ struct QuestionsView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var progress: CGFloat = 0
     @State private var currentIndex: Int = 0
+    @State private var score: CGFloat = 0
+    @State private var showScoreCard: Bool = false
     var body: some View {
         VStack{
             Button{
@@ -38,13 +40,13 @@ struct QuestionsView: View {
                         .fill(.black.opacity(0.2))
                     
                     Rectangle()
-                        .fill(Color(.gray))
-                        .frame(width: progress * size.width, alignment: .leading)
+                        .fill(Color(.blue))
+                        .frame(width: progress * size.width/3, alignment: .leading)
                 }
                 .clipShape(Capsule())
             }
             .frame(height: 20)
-            .padding(.top, 10)
+            .padding(.top, 5)
             
             // Questions
             
@@ -62,11 +64,16 @@ struct QuestionsView: View {
             
             .padding(.horizontal, -15)
             .padding(.vertical, 15)
-            CustomButton(title: "Next Question", onClick: {
-                withAnimation(.easeInOut){
-                    currentIndex += 1
-                }
-            }, color: .white.opacity(0.7), titleColor: .black.opacity(0.6))
+            CustomButton(title: currentIndex == (questions.count - 1) ? "Finish" : "Next Question", onClick: {
+                if currentIndex == (questions.count - 1) {
+                    
+                } else {
+                    withAnimation(.easeInOut){
+                        print("test")
+                        currentIndex += 1
+                        progress = CGFloat(currentIndex) / CGFloat(questions.count - 1)
+                    }}},
+             color: .white.opacity(0.7), titleColor: .black.opacity(0.6))
         }
         .padding(15)
         .hAlign(.center).vAlign(.top)
@@ -106,6 +113,11 @@ struct QuestionsView: View {
                         guard questions[currentIndex].tappedAnswer == "" else{return}
                         withAnimation(.easeInOut) {
                             questions[currentIndex].tappedAnswer = option
+                            
+                            /// Update Progress
+                            if question.answer == option{
+                                score += 1.0
+                            }
                         }
                         
                     }
