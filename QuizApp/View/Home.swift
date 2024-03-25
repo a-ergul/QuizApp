@@ -21,8 +21,9 @@ struct Home: View {
             VStack(spacing: 10){
                 Text(info.title)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .hAlign(.leading)
+                    .fontWeight(.bold)
+                    .foregroundColor(.green)
+                    .hAlign(.center)
                 
                 /// Custom Label
                 CustomLabel("list.bullet.rectangle.portrait", "\(questions.count)", "Multiple Choice Questions")
@@ -34,8 +35,12 @@ struct Home: View {
                 Divider()
                     .padding(.horizontal, -15)
                     .padding(.top, 15)
+                
+                if !info.rules.isEmpty{
+                    RulesView(info.rules)
+                }
             }
-            .padding(15)
+            .padding(20)
         } else {
             VStack(spacing: 20) {
                 ProgressView()
@@ -48,6 +53,30 @@ struct Home: View {
                     try await fetchData()
                 } catch {
                     print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    /// - Rules
+    @ViewBuilder
+    func RulesView(_ rules: [String])->some View{
+        VStack(alignment: .leading, spacing: 15) {
+            Text("Before your start")
+                .font(.title3)
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .padding(.bottom, 12)
+            
+            ForEach(rules, id: \.self) {rule in
+                HStack(alignment: .top, spacing: 10) {
+                    Circle()
+                        .fill(.gray)
+                        .frame(width: 10, height: 10)
+                        .offset(y: 6)
+                    Text(rule)
+                        .font(.callout)
+                        .lineLimit(3)
+                        .fontWeight(.semibold)
                 }
             }
         }
