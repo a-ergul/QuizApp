@@ -41,6 +41,7 @@
 		D52BF2502BB04B7700B55FE2 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BF24F2BB04B7700B55FE2 /* Info.swift */; };
 		D52BF2522BB05F6000B55FE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D52BF2512BB05F6000B55FE2 /* GoogleService-Info.plist */; };
 		D5597FBE2BB0D87200B1E34A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5597FBD2BB0D87200B1E34A /* Home.swift */; };
+		D5649C342BB1CD1300213963 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5649C332BB1CD1300213963 /* QuestionsView.swift */; };
 		D5A30C4B2BB0801E00A9AB55 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A30C4A2BB0801E00A9AB55 /* Question.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		D52BF24F2BB04B7700B55FE2 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		D52BF2512BB05F6000B55FE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5597FBD2BB0D87200B1E34A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		D5649C332BB1CD1300213963 /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		D5A30C4A2BB0801E00A9AB55 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				D5597FBD2BB0D87200B1E34A /* Home.swift */,
+				D5649C332BB1CD1300213963 /* QuestionsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			files = (
 				D5A30C4B2BB0801E00A9AB55 /* Question.swift in Sources */,
 				D52BF2042BB0486200B55FE2 /* ContentView.swift in Sources */,
+				D5649C342BB1CD1300213963 /* QuestionsView.swift in Sources */,
 				D5597FBE2BB0D87200B1E34A /* Home.swift in Sources */,
 				D52BF2502BB04B7700B55FE2 /* Info.swift in Sources */,
 				D52BF2022BB0486200B55FE2 /* QuizAppApp.swift in Sources */,

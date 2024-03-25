@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 struct Home: View {
     @State private var quizInfo: Info?
     @State private var questions: [Question] = []
+    @State private var startQuiz: Bool = false
     
     /// - Anonymous User Log
     @AppStorage("log_status") private var logStatus: Bool = false
@@ -41,7 +42,7 @@ struct Home: View {
                 }
                 
                 Button {
-                     
+                    startQuiz.toggle()
                 } label: {
                     Text("Let's Go")
                         .font(.title2)
@@ -63,6 +64,10 @@ struct Home: View {
                 .vAlign(.bottom)
             }
             .padding(20)
+            .vAlign(.top)
+            .fullScreenCover(isPresented: $startQuiz ){
+                QuestionsView(info: info, questions: questions)
+            }
         } else {
             VStack(spacing: 20) {
                 ProgressView()
