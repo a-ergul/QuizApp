@@ -40,27 +40,10 @@ struct Home: View {
                 if !info.rules.isEmpty{
                     RulesView(info.rules)
                 }
-                
-                Button {
+            
+                CustomButton(title: "Lets Go", onClick: {
                     startQuiz.toggle()
-                } label: {
-                    Text("Let's Go")
-                        .font(.title2)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        .hAlign(.center)
-                        .padding(.top, 15)
-                        .padding(.bottom, 10)
-                        .foregroundColor(.white)
-                        .background{
-                            Rectangle()
-                                .fill(Color(.orange))
-                                .ignoresSafeArea()
-                        }
-                    
-                }
-                
-                // Remove padding
-                .padding([.bottom,.horizontal], -20)
+                }, color: .orange, titleColor: .white)
                 .vAlign(.bottom)
             }
             .padding(20)
@@ -167,6 +150,38 @@ struct Home: View {
 #Preview {
     Home()
         .frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
+}
+
+/// Button it Reusable
+
+struct CustomButton: View{
+    var title: String
+    var onClick: ()->()
+    var color: Color
+    var titleColor: Color
+    
+    var body: some View{
+        Button {
+            onClick()
+        } label: {
+            Text(title)
+                .font(.title2)
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .hAlign(.center)
+                .padding(.top, 15)
+                .padding(.bottom, 10)
+                .foregroundColor(titleColor)
+                .background{
+                    Rectangle()
+                        .fill(Color(color))
+                        .ignoresSafeArea()
+                }
+            
+        }
+        
+        // Remove padding
+        .padding([.bottom,.horizontal], -20)
+    }
 }
 
 extension View{

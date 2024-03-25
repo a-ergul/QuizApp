@@ -14,6 +14,7 @@ struct QuestionsView: View {
     // View Properties
     @Environment(\.dismiss) private var dismiss
     @State private var progress: CGFloat = 0
+    @State private var currentIndex: Int = 0
     var body: some View {
         VStack{
             Button{
@@ -45,7 +46,23 @@ struct QuestionsView: View {
             .frame(height: 20)
             .padding(.top, 10)
             
+            // Questions
             
+            GeometryReader{
+                let size = $0.size
+                
+                ForEach(questions.indices,id: \.self) {index in
+                    
+                    if currentIndex == index {
+                        QuestionView(questions[currentIndex])
+                            .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+                    }
+                }
+            }
+            .padding(.vertical, 15)
+            CustomButton(title: "Next Question", onClick: {
+                
+            }, color: .white.opacity(0.7), titleColor: .black.opacity(0.6))
         }
         .padding(15)
         .hAlign(.center).vAlign(.top)
@@ -55,7 +72,13 @@ struct QuestionsView: View {
         }
         .environment(\.colorScheme, .dark)
     }
-}
+    
+    /// Question View
+    @ViewBuilder
+    func QuestionView(_ question: Question)->some View{
+        RoundedRectangle(cornerRadius: 22, style: .continuous)
+            .fill(.white)
+    }}
 
 #Preview {
     ContentView()
