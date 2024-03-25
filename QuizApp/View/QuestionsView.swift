@@ -93,7 +93,22 @@ struct QuestionsView: View {
             
             VStack(spacing: 12) {
                 ForEach(question.options,id: \.self){option in
-                    
+                    ZStack{
+                        OptionView(option, .gray)
+                            .opacity(question.answer == option && question.tappedAnswer != "" ? 0 : 1)
+                        OptionView(option, .green)
+                            .opacity(question.answer == option && question.tappedAnswer != "" ? 1 : 0)
+                        OptionView(option, .red)
+                            .opacity(question.tappedAnswer == option && question.tappedAnswer != question.answer ? 1 : 0)
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture{
+                        guard questions[currentIndex].tappedAnswer == "" else{return}
+                        withAnimation(.easeInOut) {
+                            questions[currentIndex].tappedAnswer = option
+                        }
+                        
+                    }
                 }
             }
             .padding(.vertical, 20)
