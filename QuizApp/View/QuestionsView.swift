@@ -10,7 +10,6 @@ import SwiftUI
 struct QuestionsView: View {
     var info: Info
     @State var questions: [Question]
-    
     // View Properties
     @Environment(\.dismiss) private var dismiss
     @State private var progress: CGFloat = 0
@@ -66,14 +65,15 @@ struct QuestionsView: View {
             .padding(.vertical, 15)
             CustomButton(title: currentIndex == (questions.count - 1) ? "Finish" : "Next Question", onClick: {
                 if currentIndex == (questions.count - 1) {
-                    
+                    /// Score Card
+                    showScoreCard.toggle()
                 } else {
                     withAnimation(.easeInOut){
                         print("test")
                         currentIndex += 1
                         progress = CGFloat(currentIndex) / CGFloat(questions.count - 1)
                     }}},
-             color: .white.opacity(0.7), titleColor: .black.opacity(0.6))
+                         color: .white.opacity(0.7), titleColor: .black.opacity(0.6))
         }
         .padding(15)
         .hAlign(.center).vAlign(.top)
@@ -82,6 +82,11 @@ struct QuestionsView: View {
                 .ignoresSafeArea()
         }
         .environment(\.colorScheme, .dark)
+        .fullScreenCover(isPresented: $showScoreCard){
+            ScoreCardView(score: score / CGFloat(questions.count) * 100){
+                dismiss()
+            }
+        }
     }
     
     /// Question View
@@ -113,7 +118,6 @@ struct QuestionsView: View {
                         guard questions[currentIndex].tappedAnswer == "" else{return}
                         withAnimation(.easeInOut) {
                             questions[currentIndex].tappedAnswer = option
-                            
                             /// Update Progress
                             if question.answer == option{
                                 score += 1.0
@@ -151,7 +155,49 @@ struct QuestionsView: View {
             }
     }
 }
+    
+    #Preview {
+        ContentView()
+    }
+    
+    // Score Card View
+    
+    struct ScoreCardView: View{
+        var score: CGFloat
+        var onDismiss: ()->()
+        var body: some View{
+            VStack{
+                VStack(spacing: 10){
+                    Text("Result:")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    
+                    VStack(spacing: 20) {
+                        Text("Congratulations! You\n have score")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                        
+                        // Remove Floating Points
+                        
+                        Text(String(format: "%.0f", score) + "%")
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/.bold())
+                            .padding(.bottom, 15)
+                    }
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 15)
+                    .hAlign(.center)
+                    .background {
+                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: .continuous)
+                            .fill(.white)
+                    }
+                }
+                .vAlign(.center)
+                
+                CustomButton(title: "Back to HomePage", onClick: {
+                    onDismiss()
+                }, color: .orange, titleColor: .white)
+            }
+        }}
 
-#Preview {
-    ContentView()
-}
