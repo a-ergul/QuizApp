@@ -13,6 +13,7 @@ struct QuestionsView: View {
     
     // View Properties
     @Environment(\.dismiss) private var dismiss
+    @State private var progress: CGFloat = 0
     var body: some View {
         VStack{
             Button{
@@ -24,6 +25,26 @@ struct QuestionsView: View {
                     .foregroundColor(.white)
             }
             .hAlign(.leading)
+            Text(info.title)
+                .font(.title)
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .hAlign(.leading)
+            
+            GeometryReader{
+                let size = $0.size
+                ZStack(alignment: .leading) {
+                    Rectangle()
+                        .fill(.black.opacity(0.2))
+                    
+                    Rectangle()
+                        .fill(Color(.gray))
+                        .frame(width: progress * size.width, alignment: .leading)
+                }
+                .clipShape(Capsule())
+            }
+            .frame(height: 20)
+            .padding(.top, 10)
+            
             
         }
         .padding(15)
